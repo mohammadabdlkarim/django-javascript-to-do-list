@@ -1,0 +1,43 @@
+.base-container {
+    display: grid;
+    justify-content: center;
+    background-color: black;
+    color: #fff;
+    padding: 50px;
+}
+
+.list-links,
+.link {
+    text-decoration: none;
+}
+
+.task {
+    border: solid 1px;
+    border-color: white;
+    display: flex;
+    padding-left: 25px;
+    padding-top: 5px;
+}
+
+.task-checkbox {
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.add-task-form {
+    border: solid 1px white;
+    margin: 10px  0;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.delete-link,
+.task-content-input {
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+

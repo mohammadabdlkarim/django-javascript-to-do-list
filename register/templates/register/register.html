@@ -1,0 +1,10 @@
+{% extends 'list/base.html' %} 
+{% block title %} Create User {% endblock %} 
+{% block content %}
+    <h1>Create Account</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Register</button>
+    </form>
+{% endblock content %}

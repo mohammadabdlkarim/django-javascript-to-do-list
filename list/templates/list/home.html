@@ -1,0 +1,28 @@
+{% extends 'list/base.html' %} {% block title %} Home {% endblock %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {% if lists %}
+            <h4>Your Lists</h4>
+            {% for lst in lists %}
+            <br>
+            <a href="{% url 'list:list_view' list_id=lst.id %}" class="list-links">{{ lst }}</a>
+                
+            {% endfor %}
+
+        {% else %}
+
+            <p>Not lists available</p>
+        
+        {% endif%}
+        <br><br>
+        <a href="{% url 'list:create_list' %}" class="btn btn-primary">Create a new list</a>
+        
+        <br>
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+    {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}" class="btn btn-primary">Login</a>
+        <p>Don't Have An Account?<a href="{% url 'register:create' %}" class="link">Sign Up</a></p>
+    {% endif %}
+{% endblock content %}
